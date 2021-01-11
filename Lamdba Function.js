@@ -1,5 +1,5 @@
-#Node.js 12.x
-#For LAMBDA FUNCTION DEFINATION- ALEXA CONNECT
+//Node.js 12.x
+//For LAMBDA FUNCTION DEFINATION- ALEXA CONNECT
 
 'use strict';
 const { Parser } = require('node-sql-parser');
