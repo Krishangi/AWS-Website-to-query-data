@@ -25,7 +25,7 @@ def about():
 
     if 'query' in request.args:
         if request.args.get('activeDB') == "MySQL":
-            connection = connector.connect(user='admin', password='Dbds2k19', host='finalrds.c5k076gxzohl.us-east-2.rds.amazonaws.com',port='3306', database='finalrds')
+            connection = connector.connect(user='admin', password='********', host='finalrds.c5k076gxzohl.us-east-2.rds.amazonaws.com',port='3306', database='finalrds')
 
             # declare cursor object
             cursor = connection.cursor()
@@ -60,7 +60,7 @@ def about():
             print ("Step 3")
             #connect to redshift (HAVE TO CONNECT TO REDSHIFT)
             redshiftdb = psycopg2.connect(dbname='admin1', host='admin1.cbl6aq5ts0z4.us-east-2.redshift.amazonaws.com',
-                                              port='5439', user='admin', password='Dbds2k19')
+                                              port='5439', user='admin', password='*******')
 
             # declare cursor object
             cur = redshiftdb.cursor()
