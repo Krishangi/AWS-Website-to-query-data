@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="1">
+    <title>Run Your Query</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <div class="container mt-5">
+        {% if columns==0 %}
+            <body style="background-color:transparent;">
+            <h2 style="color:blue;" style="font-family:Helvetica;">WELCOME TO THE ALEXA QUERY DASHBOARD</h2>
+            <br>
+            <img style="max-width:90%" src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/marketing-guidelines/just_ask_badge._TTH_.png" alt="Alexa logo">
+            <br>
+            <h4 style="color:red;" style="font-family:verdana;">Your last query has expired. 
+                <br>Please command a new query for Alexa to fetch.</h4> 
+            </body>
+        {% else %}
+        Query Prompt:
+        <span class="alert alert-primary" role="alert">
+            {{theQuery}}
+        </span>
+
+<!--        <h6>Query Prompt: {{theQuery}} </h6>-->
+        
+        <hr>
+        <h4>Query Result</h4>
+            <table class="table table-bordered table-hover table-sm m-2">
+                <thead class="table-info">
+                <tr>
+                {% for col in columns %}
+                    <th scope="col">{{ col }}</th>
+                {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in dataList %}
+                <tr>
+                    {% for item in data %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>
